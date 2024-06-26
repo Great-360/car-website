@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <a href="#" class="logo">Car<span>Point</span></a>
+            <ul class="navbar">
+               <li><a href="index.htm" class="active">Home</a></li>
+               <li><a href="index.htm">Cars</a></li>
+               <li><a href="index.htm">About</a></li>
+               <li><a href="index.htm">Parts</a></li>
+               <li><a href="store.htm">Store</a></li>
+               <li><a href="index.htm">Our Blog</a></li>
+            </ul>
+            <i class='bx bx-search' id="search-icon"></i>
+            <div class="search-box container">
+                <input type="search" placeholder="Search here ..">
+            </div>
+            <div class="navbar-b">
+                <div class="dropdown">
+                    <select>
+                       <option value="1">All</option>
+                       <option value="2">BMW</option>
+                       <option value="3">Mercedes</option>
+                       <option value="4">Audi</option>
+                   </select>
+                    <div class="cart" onclick="openCart()">
+                       <i class='bx bxs-cart' id="cart-icon"></i><p id="cart-count">0</p>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </header>
+    <section class="store" id="store">
+         <div id="root"></div>
+         <div class="sidebar"></div>
+    </section>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <h3>Total: $<span id="cart-total">0</span></h3>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
