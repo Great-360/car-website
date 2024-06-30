@@ -30,9 +30,16 @@ const product = [
     {id: 4, name: "Porsche", price: 300000, image: "imgs/car4.avif"},
     {id: 5, name: "Toyota", price: 350000, image: "imgs/car5.avif"},
     {id: 6, name: "Nissan", price: 400000, image: "imgs/car6.avif"},
+    {id: 7, name: "Jante", price: 150, image: "imgs/part1.webp"},
+    {id: 8, name: "Wheels", price: 110, image: "imgs/part2.webp"},
+    {id: 9, name: "Motor", price: 1500, image: "imgs/part3.webp"},
+    {id: 10, name: "Vilbrequin", price: 180, image: "imgs/part4.jpg"},
+    {id: 11, name: "Retroviseur", price: 15, image: "imgs/part5.avif"},
+    {id: 12, name: "Auto Spare Sparts", price: 50, image: "imgs/part6.avif"},
 ];
 
 const categories = [...new Set(product.map((item) => item))];
+
 
 let cartItems = [];
 let cartCount = 0;
@@ -50,7 +57,7 @@ const updateCart = () => {
                 <p>${item.name}</p>
                 <p>$${item.price}</p>
                 <p>Quantity: <input type="number" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)" min="1"></p>
-                <button onclick="removeFromCart(${item.id})">Remove</button>
+                <button class="btn" onclick="removeFromCart(${item.id})">Remove</button>
             </div>
         `;
     }).join('');
@@ -90,6 +97,7 @@ const updateQuantity = (id, quantity) => {
 
 const openCart = () => {
     document.getElementById('cart-modal').style.display = 'flex';
+    document.querySelector('header').style.zIndex = 0;
 }
 
 const closeCart = () => {

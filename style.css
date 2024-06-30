@@ -43,7 +43,8 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
+    background-color: #fff;
 }
 header.shadow{
     background:var(--bg-color);
@@ -364,17 +365,11 @@ header.shadow #search-icon{
     margin-top: 100px;
 }
 #root{
-    width: 60%;
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
-}
-.sidebar{
-    width: 40%;
-    border-radius: 5px;
-    background-color: #f6f6f6;
-    margin-left: 20px;
-    text-align: center;
+    margin: auto;
 }
 .box{
     width: calc(100% - 20px);
@@ -394,12 +389,14 @@ header.shadow #search-icon{
 }
 .img-box img {
     width: 100%;
-    height: auto;
+    height: 150px;
+    object-fit: contain;
+   object-position: center;
     transition: all 0.3s ease;
 }
 
 .img-box img:hover {
-    transform: scale(1.05);
+    transform: scale(2);
 }
 .bottom{
     display: flex;
@@ -458,6 +455,16 @@ select:hover{
     width: 50%;
     max-height: 80%;
     overflow-y: auto;
+   
+    
+}
+.cart-content::-webkit-scrollbar{
+    width: 0.5rem;
+    background: transparent;
+}
+.cart-content::-webkit-scrollbar-thumb{
+    border-radius: 5rem;
+    background: var(--text-color);
 }
 
 .cart-content .close {
@@ -465,8 +472,28 @@ select:hover{
     font-size: 1.5rem;
     cursor: pointer;
 }
-
-
+.cart-content h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+.cart-content h3{
+    font-size: 1.2rem;
+   font-weight: 700;
+   margin-bottom: 1rem;
+}
+.cart-item p{
+    margin: 10px;
+    font-weight: 700;
+}
+.cart-item p input{
+    font-weight: 700;
+}   
+.cart-item button{
+    margin-bottom: 50px ;
+}
+   
 /*      store        */
 
 .footer{
@@ -544,11 +571,11 @@ select:hover{
     }
     #root{
         grid-template-columns: repeat(1,1fr);
+        width: 60%;
+        margin: auto;
     }
-    .sidebar{
-        width: 40%;
-        margin-left: 0;
-        margin-bottom: 30px;
+    .cart-content{
+        width: 80%;
     }
 }
 @media(max-width:920px){
